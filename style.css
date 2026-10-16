@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #1e293b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* Main Layout */
+.container {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+.sidebar h2 {
+    margin-bottom: 18px;
+}
+
+.category-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #f1f5f9;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+.main-content h2 {
+    margin-bottom: 20px;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.search-box input,
+.search-box select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-box select {
+    max-width: 190px;
+    background: white;
+}
+
+/* Buttons */
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.sort-buttons button {
+    padding: 11px 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.sort-buttons button:hover {
+    background: #1d4ed8;
+}
+
+#resetBtn {
+    background: #64748b;
+}
+
+#resetBtn:hover {
+    background: #475569;
+}
+
+#resultCount {
+    margin-bottom: 15px;
+    color: #64748b;
+}
+
+/* Table */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+thead {
+    background: #1e293b;
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover {
+    background: #f1f5f9;
+}
+
+/* Stock labels */
+.stock {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.in-stock {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.out-stock {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+#noResults {
+    padding: 25px;
+    text-align: center;
+    color: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box select {
+        max-width: none;
+    }
+}
+.total-box {
+    background: #dcfce7;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 5px solid #16a34a;
+}
+
+.total-box h3 {
+    color: #166534;
+    margin-bottom: 8px;
+}
+
+.total-box p {
+    color: #15803d;
+    font-size: 26px;
+    font-weight: bold;
+}
+/* Add product button */
+#showFormBtn {
+    background: #16a34a;
+    color: white;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#showFormBtn:hover {
+    background: #15803d;
+}
+
+/* Product form */
+.form-box {
+    margin: 20px 0;
+    padding: 22px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.form-box h3 {
+    margin-bottom: 18px;
+}
+
+#productForm label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+#productForm input,
+#productForm select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+.form-buttons #cancelFormBtn {
+    background: #64748b;
+}
+
+#productForm button:hover {
+    opacity: 0.85;
+}
+.discount {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.final-price {
+    color: #15803d;
+    font-weight: bold;
+}

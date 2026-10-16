@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Product Dashboard</h1>
+        <p>Search, filter, and sort your products</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Categories</h2>
+
+            <button class="category-btn active" data-category="all">
+                All Products
+            </button>
+
+            <button class="category-btn" data-category="electronics">
+                Electronics
+            </button>
+
+            <button class="category-btn" data-category="stationary">
+                Stationary
+            </button>
+
+            <button class="category-btn" data-category="accessories">
+                Accessories
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <h2>Products</h2>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by product name or category..."
+                >
+
+                <select id="searchType">
+                    <option value="all">Search All Fields</option>
+                    <option value="name">Product Name</option>
+                    <option value="category">Category</option>
+                    <option value="price">Price</option>
+                    <option value="stock">Stock Status</option>
+                    <option value="color">Color</option>
+                </select>
+            </div>
+
+            <!-- Sort Buttons -->
+            <div class="sort-buttons">
+                <button id="priceAsc">Price: Ascending ↑</button>
+                <button id="priceDesc">Price: Descending ↓</button>
+                <button id="resetBtn">Reset Filters</button>
+                <button id="addItemBtn">+ Add New Item</button>
+            </div>
+            
+<button id="showFormBtn">+ Add New Item</button>
+
+<div id="addItemForm" class="form-box" hidden>
+    <h3>Add a New Product</h3>
+
+    <form id="productForm">
+        <label for="itemName">Product Name</label>
+        <input type="text" id="itemName" required
+               placeholder="Enter product name">
+
+        <label for="itemPrice">Price (Rs.)</label>
+        <input type="number" id="itemPrice" required
+               min="0" step="0.01" placeholder="Enter price">
+
+        <label for="itemCategory">Category</label>
+        <input type="text" id="itemCategory" required
+               placeholder="e.g. office, electronics">
+
+        <label for="itemColor">Color</label>
+        <input type="text" id="itemColor" required
+               placeholder="Enter color">
+
+        <label for="itemStock">In Stock?</label>
+        <select id="itemStock" required>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <div class="form-buttons">
+            <button type="submit">Add Product</button>
+            <button type="button" id="cancelFormBtn">Cancel</button>
+        </div>
+    </form>
+</div>
+
+            <p id="resultCount"></p>
+            <div class="total-box">
+                <h3>Total Amount of Items In Stock</h3>
+                    <p id="totalAmount">Rs. 0</p>
+            </div>
+            <!-- Product Table -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Original Price</th>
+                            <th>Discount</th>
+                            <th>Final Price</th>
+                            <th>Category</th>
+                            <th>Color</th>
+                            <th>In Stock</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTable">
+                        <!-- JavaScript inserts products here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="noResults" hidden>
+                No products found.
+            </p>
+
+        </main>
+    </div>
+
+</body>
+</html>
